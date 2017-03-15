@@ -1,0 +1,148 @@
+package com.icunsun.monitor.ui.fragment;
+
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.icunsun.monitor.R;
+import com.icunsun.monitor.adapter.MonitorInfoAdapter;
+import com.icunsun.monitor.common.TypeConstants;
+import com.icunsun.monitor.model.MonitorInfo;
+import com.icunsun.monitor.model.MonitorUser;
+import com.icunsun.monitor.model.State;
+import com.icunsun.monitor.ui.EnterpriseActivity;
+import com.icunsun.monitor.util.ToastUtils;
+
+import java.util.List;
+
+import butterknife.BindView;
+import cn.appsdream.nestrefresh.base.AbsRefreshLayout;
+import cn.appsdream.nestrefresh.base.OnPullListener;
+import cn.appsdream.nestrefresh.normalstyle.NestRefreshLayout;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
+
+/**
+ * 审核Fragment
+ * A simple {@link Fragment} subclass.
+ */
+public class ReviewFragment extends BaseFragment implements OnPullListener {
+
+
+    private int mLimit = 20;
+    private int mCurPage = 0;
+    private MonitorInfoAdapter mAdapter;
+
+    @BindView(R.id.lv_review)
+    ListView mReviewLv;
+    private NestRefreshLayout mLoader;
+
+    @Override
+    public void init(Bundle savedInstanceState) {
+        mLoader = new NestRefreshLayout(mReviewLv);
+        mLoader.setPullRefreshEnable(true);
+        mLoader.setPullLoadEnable(true);
+        mLoader.setOnLoadingListener(this);
+
+        mAdapter = new MonitorInfoAdapter(getContext(), null, R.layout.item_monitorinfo);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.empty_monitor_layout, mReviewLv, false);
+        ViewGroup parent = (ViewGroup) mReviewLv.getParent().getParent();
+        parent.addView(view, 1);
+        mReviewLv.setEmptyView(view);
+        mReviewLv.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        queryData(TypeConstants.STATE_REVIEW, State.REFRESH);
+    }
+
+    @Override
+    public int getLayoutResId() {
+        return R.layout.fragment_review;
+    }
+
+    /**
+     * 根据传入的状态查询数据
+     *
+     * @param type
+     * @param state
+     */
+    private void queryData(int type, final State state) {
+        int page = 0;
+        switch (state) {
+            case REFRESH:
+                page = 0;
+                break;
+            case LOADING:
+                page = mCurPage + 1;
+                break;
+
+        }
+        MonitorUser currentUser = MonitorUser.getCurrentUser(MonitorUser.class);
+        BmobQuery<MonitorInfo> query = new BmobQuery<>();
+        query.addWhereEqualTo("mUserId", currentUser.getObjectId());
+        query.addWhereEqualTo("mState", type);
+        query.setLimit(mLimit);
+        query.setSkip(page * mLimit);
+        query.order("-createdAt");
+        query.findObjects(new FindListener<MonitorInfo>() {
+            @Override
+            public void done(List<MonitorInfo> list, BmobException e) {
+                if (mLoader != null) {
+                    mLoader.onLoadFinished();
+                }
+                if (e == null) {
+                    switch (state) {
+                        case REFRESH:
+                            // 刷新成功，将当前页置零
+                            mCurPage = 0;
+                            mAdapter.updateData(list);
+                            break;
+                        case LOADING:
+                            // 成功之后才将当前页加一
+                            mCurPage++;
+                            if (list.size() > 0) {
+                                mAdapter.addData(list);
+                                ToastUtils.toast(getContext(), "加载成功");
+                            } else {
+                                ToastUtils.toast(getContext(), "无更多数据");
+                            }
+                            break;
+                    }
+                } else {
+                    ToastUtils.toast(getContext(), "操作失败，请重试!");
+                }
+            }
+        });
+
+    }
+
+
+    /**
+     * 下拉刷新监听
+     *
+     * @param listLoader
+     */
+    @Override
+    public void onRefresh(AbsRefreshLayout listLoader) {
+        queryData(TypeConstants.STATE_REVIEW, State.REFRESH);
+    }
+
+    /**
+     * 上拉加载监听
+     *
+     * @param listLoader
+     */
+    @Override
+    public void onLoading(AbsRefreshLayout listLoader) {
+        queryData(TypeConstants.STATE_REVIEW, State.LOADING);
+    }
+}

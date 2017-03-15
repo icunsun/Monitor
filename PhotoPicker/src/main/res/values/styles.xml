@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PickerToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">#fff</item> <!--  敲定颜色-->
+        <item name="colorControlNormal">#fff</item>
+    </style>
+</resources>

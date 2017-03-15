@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.icunsun.monitor.ui.FeedbackActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tv_title_height"
+        android:background="@color/color_logo">
+
+
+        <ImageView
+            android:id="@+id/image_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@mipmap/icon_back"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tv_title_height"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/str_feedback"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <include layout="@layout/divider"/>
+
+    <EditText
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:id="@+id/et_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#fff"
+        android:gravity="start"
+        android:hint="@string/hint_feedback"
+        android:lineSpacingExtra="8dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="15dp"
+        android:textColorHint="@color/color_text_hint"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_selector"
+        android:text="@string/str_submit"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+</LinearLayout>

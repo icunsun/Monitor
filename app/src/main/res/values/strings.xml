@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">村尚i拍</string>
+    <string name="str_login">登录</string>
+    <string name="str_phone">手机号</string>
+    <string name="str_pwd">登录密码</string>
+    <string name="str_verify">验证码</string>
+    <string name="str_get_verify">获取验证码</string>
+    <string name="str_have_username">已有账号？</string>
+    <string name="str_login_immediately">马上登录</string>
+    <string name="str_register">注册</string>
+    <string name="str_name">姓名</string>
+    <string name="str_enterprise">企业</string>
+    <string name="str_reset_pwd">重置密码</string>
+    <string name="str_confirm_pwd">确认密码</string>
+    <string name="str_new_pwd">新密码（6位字符以上）</string>
+    <string name="str_confirm">确认</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_send">发送</string>
+    <string name="hint_say_sth">快来说些什么吧...</string>
+
+    <string name="notifyTitle">提示</string>
+    <string name="notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
+    <string name="setting">设置</string>
+    <string name="cancel">取消</string>
+    <string name="str_no_content">暂无内容</string>
+    <string name="str_feedback">意见反馈</string>
+    <string name="hint_feedback">您的意见对我们非常重要，我们会不断的优化和改善为您带来更好的体验，谢谢！</string>
+    <string name="str_submit">提交</string>
+
+    <string name="device_not_supported">Device not supported</string>
+    <string name="device_not_supported_message">FFmpeg is not supported on your device</string>
+    <string name="str_location">北京</string>
+    <string name="str_select_place">选择地区</string>
+    <string name="str_cur_place">当前地区</string>
+    <string name="str_video_hint">(建议5分钟左右)</string>
+    <string name="str_check">审核</string>
+
+
+    <integer name="TAG">22</integer>
+
+
+    <string-array name="provinces_name">
+        <item>北京</item>
+        <item>天津</item>
+        <item>河北</item>
+        <item>山西</item>
+        <item>内蒙古</item>
+        <item>辽宁</item>
+        <item>吉林</item>
+        <item>黑龙江</item>
+        <item>上海</item>
+        <item>江苏</item>
+        <item>浙江</item>
+        <item>安徽</item>
+        <item>福建</item>
+        <item>江西</item>
+        <item>山东</item>
+        <item>河南</item>
+        <item>湖北</item>
+        <item>湖南</item>
+        <item>广东</item>
+        <item>广西</item>
+        <item>海南</item>
+        <item>重庆</item>
+        <item>四川</item>
+        <item>贵州</item>
+        <item>云南</item>
+        <item>西藏</item>
+        <item>陕西</item>
+        <item>甘肃</item>
+        <item>青海</item>
+        <item>宁夏</item>
+        <item>新疆</item>
+        <item>台湾</item>
+        <item>香港</item>
+        <item>澳门</item>
+    </string-array>
+
+    <integer-array name="provinces_code">
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>71</item>
+        <item>81</item>
+        <item>82</item>
+    </integer-array>
+
+    <string-array name="state_name">
+        <item>已通过</item>
+        <item>审核中</item>
+    </string-array>
+
+
+</resources>

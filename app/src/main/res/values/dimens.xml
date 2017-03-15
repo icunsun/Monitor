@@ -1,0 +1,37 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="tv_title_height">48dp</dimen>
+    <dimen name="tv_title_size">20sp</dimen>
+    <dimen name="view_divider_height">8dp</dimen>
+    <dimen name="actionBarSize">48dp</dimen>
+    <dimen name="text_margin">8dp</dimen>
+    <dimen name="image_margin">20dp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="text_size">14sp</dimen>
+    <dimen name="text_cur_margin">15dp</dimen>
+    <dimen name="text_place_margin">17dp</dimen>
+    <dimen name="text_place_height">30dp</dimen>
+    <dimen name="text_place_width">90dp</dimen>
+    <dimen name="text_place_bottom_margin">20dp</dimen>
+
+    <dimen name="item_address_margin">17dp</dimen>
+    <dimen name="item_address_height">47dp</dimen>
+    <dimen name="tv_select_place">15dp</dimen>
+
+    <dimen name="item_info_height">16dp</dimen>
+    <dimen name="item_image_height">106dp</dimen>
+
+    <dimen name="iv_margin_bottom">50dp</dimen>
+    <dimen name="iv_margin_left">85dp</dimen>
+    <dimen name="iv_margin_right">85dp</dimen>
+    <dimen name="cv_margin_top">15dp</dimen>
+
+    <dimen name="item_review_margin">8dp</dimen>
+    <dimen name="tv_margin_left">6dp</dimen>
+
+
+</resources>
