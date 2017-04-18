@@ -50,6 +50,7 @@ public class CheckActivity extends BaseActivity implements AddressAdapter.OnItem
     public void init(Bundle savedInstanceState) {
         mManager = new CustomLinearLayoutManager(this, CustomLinearLayoutManager.HORIZONTAL, false);
 
+
         mReviewRv.setLayoutManager(mManager);
         mAdapter = new ReviewAdapter(null, this);
         mAdapter.setListener(this);

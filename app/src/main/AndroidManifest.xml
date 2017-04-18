@@ -46,28 +46,27 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="d037f46fafc69c2954b5078fcdc01b3c"></meta-data>
+            android:value="d037f46fafc69c2954b5078fcdc01b3c"/>
 
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.MainActivity"/>
         <activity
             android:name=".ui.LoginActivity"
-            android:launchMode="singleTask"></activity>
-        <activity android:name=".ui.RegisterActivity"></activity>
-        <activity android:name=".ui.ForgetPwdActivity"></activity>
+            android:launchMode="singleTask"/>
+        <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".ui.LoginByPhoneActivity"/>
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MonitorActivity"></activity>
+        <activity android:name=".ui.MonitorActivity"/>
         <activity android:name=".ui.PickerVideoActivity"/>
-        <activity android:name=".ui.EnterpriseActivity"></activity>
+        <activity android:name=".ui.EnterpriseActivity"/>
         <activity
             android:name=".ui.UploadActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name="me.iwf.photopicker.PhotoPickerActivity"
             android:theme="@style/CustomTheme"/>
@@ -81,10 +80,10 @@
             android:name=".ui.PlayActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/Transparent"></activity>
-        <activity android:name=".ui.FeedbackActivity"></activity>
-        <activity android:name=".ui.SelectPlaceActivity"></activity>
-        <activity android:name=".ui.CheckActivity"></activity>
+            android:theme="@style/Transparent"/>
+        <activity android:name=".ui.FeedbackActivity"/>
+        <activity android:name=".ui.SelectPlaceActivity"/>
+        <activity android:name=".ui.CheckActivity"/>
     </application>
 
 </manifest>

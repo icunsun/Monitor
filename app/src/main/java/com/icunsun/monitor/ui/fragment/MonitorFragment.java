@@ -129,7 +129,7 @@ public class MonitorFragment extends BaseFragment {
                     user.setUserType(TypeConstants.MONITOR);
                     user.setPwd(pwd);
                     user.setMobilePhoneNumber(phone);
-                    // 讲电话号码设置成激活状态
+                    // 将电话号码设置成激活状态
                     user.setMobilePhoneNumberVerified(true);
                     user.signUp(new SaveListener<MonitorUser>() {
                         @Override

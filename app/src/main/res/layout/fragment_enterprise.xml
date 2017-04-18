@@ -111,6 +111,11 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/icon_pwd"/>
 
         <EditText
             android:id="@+id/et_password"
@@ -125,11 +130,6 @@
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="16sp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:src="@mipmap/icon_pwd"/>
 
         <CheckBox
             android:id="@+id/chb_pwd"

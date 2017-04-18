@@ -66,7 +66,7 @@ public class LoginActivity extends BaseActivity {
      * 忘记密码功能
      */
     private void forgetPwd() {
-        Intent intent = new Intent(this, ForgetPwdActivity.class);
+        Intent intent = new Intent(this, LoginByPhoneActivity.class);
         startActivity(intent);
     }
 
@@ -81,9 +81,7 @@ public class LoginActivity extends BaseActivity {
      */
     private void judgeLogin() {
         MonitorUser user = BmobUser.getCurrentUser(MonitorUser.class);
-        if (user == null) {
-            Log.e(TAG, "onNewIntent: user 为空");
-        } else {
+        if (user != null) {
             String username = user.getUsername();
             String pwd = user.getPwd();
             mUsernameEt.setText(username);

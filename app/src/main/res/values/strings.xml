@@ -34,6 +34,7 @@
     <string name="str_cur_place">当前地区</string>
     <string name="str_video_hint">(建议5分钟左右)</string>
     <string name="str_check">审核</string>
+    <string name="str_login_by_phone">验证手机登录</string>
 
 
     <integer name="TAG">22</integer>
